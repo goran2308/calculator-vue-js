@@ -1,6 +1,6 @@
 <template>
   <div class="calculator">
-    <div class="display">{{current || '0'}}</div>
+    <div class="display"> <div class="result"> {{current || '0'}} </div> </div>
     <button @click="clear" class="btn">AC</button>
     <button @click="sign" class="btn">+/-</button>
     <button @click="percent" class="btn">%</button>
@@ -92,12 +92,24 @@ export default {
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: minmax(50px, auto);
     font-size: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #999;
   }
 
   .display{
+    display: flex;
+    height: 80px;
     grid-column: 1/5;
     background-color: #333;
     color: white;
+    justify-content: flex-end;
+  }
+
+  .result {
+    align-self: flex-end;
+    font-size: 50px;
+    margin-right: 20px;
   }
 
   .zero{
@@ -107,11 +119,20 @@ export default {
   .btn{
     font-size: 26px;
     background-color: #f2f2f2;
-    border: 1px solid #999;
+    border: none;
   }
+
+.btn:hover {
+  background-color: #999;
+  color: white;
+}
 
   .operator{
     background-color: orange;
     color: white;
+  }
+
+  .operator:hover {
+    background-color: darkgoldenrod;
   }
 </style>
