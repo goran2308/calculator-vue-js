@@ -65,7 +65,7 @@ export default {
     },
     times() {
       this.operator = (a, b) => b * a;
-      this.operator(parseFloat(this.current), parseFloat(this.previous));
+      this.setPrevious();
     },
     minus() {
       this.operator = (a, b) => b - a;
