@@ -114,6 +114,11 @@ export default {
 
   .zero{
     grid-column: 1/3;
+    background-color: rgb(37, 214, 96) !important;
+  }
+
+  .zero:hover {
+    background-color: rgb(28, 167, 74) !important;
   }
 
   .btn{
